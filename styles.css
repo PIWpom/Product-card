@@ -1,0 +1,166 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  4. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select, h1, p {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/* CSS RESET ENDS HERE! */
+
+
+/* Fonts and Colors */
+:root {
+  --color-dark-cyan: hsl(158, 36%, 37%);
+
+  --bg-color-white: hsl(0, 0%, 100%);
+  --bg-color-cream: hsl(30, 38%, 92%);
+
+  --text-color-dark-blue: hsl(212, 21%, 14%);
+  --text-color-dark-grey: hsl(228, 12%, 48%);
+
+  --font-family-fraunces: 'Fraunces';
+  --font-family-montserrat: 'Montserrat';
+}
+
+
+
+
+
+
+
+body {
+  background-color: var(--bg-color-cream);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+}
+
+.product {
+  display: grid;
+  background-color: var(--bg-color-white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.product-content {
+  padding: 2rem;
+  gap: 1rem;
+  display: grid;
+}
+
+.small-title {
+  font-family: var(--font-family-montserrat);
+  font-size: 0.75rem;
+  color: var(--text-color-dark-grey);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.product-content > h1 {
+  font-family: var(--font-family-fraunces);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2rem;
+  color: var(--text-color-dark-blue);
+}
+
+.product-description {
+  font-family: var(--font-family-montserrat);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: var(--text-color-dark-grey);
+}
+
+.prices {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.current-price {
+  font-family: var(--font-family-fraunces);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-dark-cyan);
+}
+
+.previous-price {
+  font-family: var(--font-family-montserrat);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-color-dark-grey);
+  text-decoration: line-through;
+}
+
+.button {
+  font-family: var(--font-family-montserrat);
+  font-weight: 600;
+  font-size: 0.95rem;
+  background-color: var(--color-dark-cyan);
+  color: var(--bg-color-white);
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button::before {
+  content: url(/images/icon-cart.svg);
+  margin-right: 0.5rem;
+}
+
+.button:hover {
+  background-color: hsl(158, 36%, 20%);
+  color: var(--bg-color-white);
+  outline: none;
+}
+
+
+@media (min-width: 600px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
